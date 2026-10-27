@@ -487,6 +487,35 @@ summary::before {
 .unit > summary::before { grid-column: 1 !important; margin: 0 !important; }
 .unit > summary > .part-label { grid-column: 2 !important; display: block !important; margin: 0 !important; padding: 0 !important; text-align: left !important; }
 .header h1 { text-align: center !important; margin-inline: auto !important; }
+
+/* 標題視覺微調：整體向左 8px，不影響 PART 與播放器 */
+.header h1 { position: relative !important; left: -8px !important; }
+
+/* PART 1–7 統一以卡片寬度正中央對齊；三角形固定左側 */
+.unit > summary {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 5px 30px !important;
+}
+.unit > summary::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 24px !important;
+    margin: 0 !important;
+}
+.unit > summary > .part-label {
+    display: block !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
 </style>
 
 </head>
