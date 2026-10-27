@@ -473,6 +473,20 @@ summary::before {
 .unit > summary { display: flex !important; align-items: center !important; justify-content: flex-start !important; gap: 10px !important; padding-left: 0 !important; margin-left: 0 !important; text-align: left !important; }
 .unit > summary::before { flex: 0 0 24px !important; width: 24px !important; margin: 0 !important; }
 
+
+/* PART 文字用獨立 span，消除縮排空白對 flex 排列的影響 */
+.unit > summary {
+  display: grid !important;
+  grid-template-columns: 24px minmax(0,1fr) !important;
+  column-gap: 10px !important;
+  justify-content: start !important;
+  align-items: center !important;
+  text-align: left !important;
+  padding: 5px 0 !important;
+}
+.unit > summary::before { grid-column: 1 !important; margin: 0 !important; }
+.unit > summary > .part-label { grid-column: 2 !important; display: block !important; margin: 0 !important; padding: 0 !important; text-align: left !important; }
+.header h1 { text-align: center !important; margin-inline: auto !important; }
 </style>
 
 </head>
@@ -561,11 +575,7 @@ summary::before {
 
 
 
-        <summary>
-
-            PART 1
-
-        </summary>
+        <summary><span class="part-label">PART 1</span></summary>
 
 
 
@@ -695,11 +705,7 @@ summary::before {
 
 
 
-        <summary>
-
-            PART 2
-
-        </summary>
+        <summary><span class="part-label">PART 2</span></summary>
 
 
 
@@ -829,11 +835,7 @@ summary::before {
 
 
 
-        <summary>
-
-            PART 3
-
-        </summary>
+        <summary><span class="part-label">PART 3</span></summary>
 
 
 
@@ -959,11 +961,7 @@ summary::before {
 
 
 
-            <summary>
-
-                PART 4
-
-            </summary>
+            <summary><span class="part-label">PART 4</span></summary>
 
 
 
@@ -1089,11 +1087,7 @@ summary::before {
 
 
 
-            <summary>
-
-                PART 5
-
-            </summary>
+            <summary><span class="part-label">PART 5</span></summary>
 
 
 
@@ -1219,11 +1213,7 @@ summary::before {
 
 
 
-            <summary>
-
-                PART 6
-
-            </summary>
+            <summary><span class="part-label">PART 6</span></summary>
 
 
 
@@ -1349,11 +1339,7 @@ summary::before {
 
 
 
-            <summary>
-
-                PART 7
-
-            </summary>
+            <summary><span class="part-label">PART 7</span></summary>
 
 
 
