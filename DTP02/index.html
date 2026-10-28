@@ -158,7 +158,7 @@ seek.oninput=()=>{if(a.duration)a.currentTime=a.duration*seek.value/100};
 function build(container){
 if(container.dataset.done)return;container.dataset.done='1';
 let part=container.dataset.part;
-let names=[['PART '+part,'PART_'+String(part).padStart(2,'0')+'.mp3']];
+let names=[['PART '+part,'PART_'+part+'.mp3']];
 for(let i=+container.dataset.start;i<=+container.dataset.end;i++){let id='DTP02_L'+String(i).padStart(3,'0');names.push([id,id+'.mp3'])}
 for(const [label,file] of names){const row=document.createElement('div');row.className='track';row.innerHTML='<div class="trackname"></div><div class="player"><button class="play" type="button" aria-label="播放"><i></i></button><span class="time">0:00 / 0:00</span><input class="seek" type="range" min="0" max="100" value="0" step=".1" aria-label="播放進度"><audio preload="none"></audio></div>';row.querySelector('.trackname').textContent=label;row.querySelector('audio').dataset.src='../TOEIC_mp3/mp3/'+file;container.appendChild(row);bind(row.querySelector('.player'))}
 }
